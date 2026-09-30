@@ -3,7 +3,7 @@ const {db,$,esc,safeUrl,backendProblem,cardUrl,qrCanvas,initials}=QL;
 function fail(m){$('notice').textContent=m;$('notice').classList.remove('hidden');$('publicCard').classList.add('hidden')}
 try{
  const p=backendProblem();if(p)throw Error(p);
- const q=new URLSearchParams(location.search);const slug=(q.get('u')||'').toLowerCase(),id=q.get('id');
+ const q=new URLSearchParams(location.search);const pm=location.pathname.match(/^\/u\/([a-z0-9_-]{3,30})\/?$/i);const slug=(q.get('u')||(pm?pm[1]:'')).toLowerCase(),id=q.get('id');
  if(!slug&&!id)throw Error('This profile link is incomplete.');
  let qb=db.from('cards').select('*');qb=slug?qb.eq('slug',slug):qb.eq('id',id);
  const {data:c,error}=await qb.maybeSingle();if(error)throw Error('Could not load this profile. Please try again.');

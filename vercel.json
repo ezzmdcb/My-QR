@@ -2,7 +2,7 @@
  "rewrites": [
   {
    "source": "/u/:slug",
-   "destination": "/card.html"
+   "destination": "/card.html?u=:slug"
   }
  ],
  "headers": [
