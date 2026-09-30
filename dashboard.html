@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#070a12"><title>Dashboard — QRLink</title><link rel="icon" href="./assets/icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.json"><link rel="stylesheet" href="./style.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script><script src="./config.js"></script><script src="./assets/qr.js"></script><script src="./core.js"></script></head>
+<body class="builder-page">
+<header class="nav"><a class="logo" href="./index.html"><span class="logo-mark">QR</span><span>QRLink</span></a><nav><a href="./create.html">+ New card</a><a href="#" id="signOut">Sign out</a></nav></header>
+<main class="shell builder-shell"><div class="builder-heading"><div><div class="section-kicker">DASHBOARD</div><h1>Your QR cards</h1><p id="who">Loading…</p></div><a class="button primary" href="./create.html">+ New card</a></div>
+<div id="notice" class="notice hidden"></div>
+<div class="stats"><div class="stat"><b id="sCards">0</b><span>Cards</span></div><div class="stat"><b id="sViews">0</b><span>Views (30 days)</span></div><div class="stat"><b id="sClicks">0</b><span>Link clicks (30 days)</span></div></div>
+<div id="cardList" class="card-list"></div></main>
+<footer class="shell"><span>QRLink</span><span><a href="./legal.html?p=privacy">Privacy</a> · <a href="./legal.html?p=terms">Terms</a></span></footer>
+<script src="./dashboard.js"></script>
+<script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));</script>
+</body></html>

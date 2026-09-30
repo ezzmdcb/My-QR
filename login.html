@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#070a12"><title>Sign in — QRLink</title><link rel="icon" href="./assets/icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.json"><link rel="stylesheet" href="./style.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script><script src="./config.js"></script><script src="./assets/qr.js"></script><script src="./core.js"></script></head>
+<body class="builder-page">
+<header class="nav"><a class="logo" href="./index.html"><span class="logo-mark">QR</span><span>QRLink</span></a><nav><a href="./index.html">Home</a></nav></header>
+<main class="shell auth-shell"><div class="form-panel auth-card"><div class="section-kicker">ACCOUNT</div><h1 id="authTitle">Sign in</h1><p class="field-help">Manage your cards, edit them any time, and see scan analytics.</p><div id="notice" class="notice hidden"></div>
+<form id="authForm"><label>Email<input id="email" type="email" autocomplete="email" required></label><label>Password<input id="password" type="password" autocomplete="current-password" minlength="8" required></label><button class="button primary wide" id="submitBtn" type="submit">Sign in</button></form>
+<button class="button secondary wide" id="googleBtn" type="button">Continue with Google</button>
+<p class="auth-links"><a href="#" id="toggleMode">New here? Create an account</a> · <a href="#" id="forgot">Forgot password?</a></p></div></main>
+<footer class="shell"><span>QRLink</span><span><a href="./legal.html?p=privacy">Privacy</a> · <a href="./legal.html?p=terms">Terms</a></span></footer>
+<script src="./login.js"></script>
+<script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));</script>
+</body></html>

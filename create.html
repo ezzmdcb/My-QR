@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#070a12"><title>Card builder — QRLink</title><link rel="icon" href="./assets/icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.json"><link rel="stylesheet" href="./style.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script><script src="./config.js"></script><script src="./assets/qr.js"></script><script src="./core.js"></script></head>
+<body class="builder-page">
+<header class="nav"><a class="logo" href="./index.html"><span class="logo-mark">QR</span><span>QRLink</span></a><nav><a href="./dashboard.html">← Dashboard</a></nav></header>
+<main class="shell builder-shell">
+<div class="builder-heading"><div><div class="section-kicker">CARD BUILDER</div><h1 id="pageTitle">Create your unique QR card</h1><p>Add everything you want people to find in one place.</p></div><div id="modeBadge" class="mode-badge">Checking…</div></div>
+<div id="notice" class="notice hidden"></div>
+<div class="builder-layout">
+<form id="cardForm" class="form-panel">
+<div class="form-section"><div class="section-title"><div><span>01</span><h2>Profile</h2></div><small>Required: name &amp; username</small></div>
+<div class="photo-row"><div id="photoPreview" class="big-avatar">QR</div><label class="upload"><input id="photo" type="file" accept="image/png,image/jpeg,image/webp"><span>Upload photo</span><small>JPG, PNG or WebP · auto-resized</small></label></div>
+<label>Display name<input id="name" maxlength="80" required placeholder="Ezz Nofal"></label>
+<label>Username (your link)<input id="slug" maxlength="30" required placeholder="ezz-nofal" autocapitalize="none" spellcheck="false"></label><p id="slugHint" class="field-help">3–30 characters: a-z, 0-9, - or _</p>
+<label>Short bio<textarea id="bio" maxlength="180" rows="3" placeholder="Student · Creator · Developer"></textarea></label></div>
+<div class="form-section"><div class="section-title"><div><span>02</span><h2>Contact</h2></div><small>Optional</small></div><div class="two"><label>Email<input id="email" type="email" maxlength="120" placeholder="you@example.com"></label><label>Phone<input id="phone" type="tel" maxlength="30" placeholder="+20 10 1234 5678"></label></div></div>
+<div class="form-section"><div class="section-title"><div><span>03</span><h2>Your links</h2></div><small id="linkCount">0 links</small></div><p class="field-help">Add any website, social profile or custom URL.</p><div id="linksList" class="links-list"></div><button type="button" class="add-link" id="addLink">+ Add another link</button></div>
+<div class="form-section qr-studio"><div class="section-title"><div><span>04</span><h2>QR Studio</h2></div><small>Scan-friendly colors</small></div><div class="two"><label>QR color<input id="qrDark" type="color" value="#101827"></label><label>Background color<input id="qrLight" type="color" value="#ffffff"></label></div><label>Profile theme<select id="theme"><option value="midnight">Midnight</option><option value="violet">Violet glow</option><option value="ocean">Ocean blue</option><option value="minimal">Minimal</option></select></label><p id="qrWarn" class="field-help">Use a dark QR on a light background for reliable scanning.</p></div>
+<div class="form-actions"><button class="button primary wide" id="createBtn" type="submit">Save &amp; generate QR <span>→</span></button></div>
+</form>
+<aside class="preview-column"><div class="preview-label">LIVE PREVIEW</div><div class="profile-card" id="previewCard" data-theme="midnight"><div id="previewAvatar" class="profile-avatar">QR</div><div class="verified">● QRLink profile</div><h2 id="previewName">Your Name</h2><p id="previewBio">Your short bio appears here</p><div id="previewContact" class="contact-line"></div><div id="previewLinks" class="preview-links"></div><div class="qr-area"></div></div><div id="result" class="result hidden"></div></aside>
+</div></main>
+<script src="./app.js"></script>
+<script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));</script>
+</body></html>
